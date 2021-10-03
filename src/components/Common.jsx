@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Common = (props) => {
   return (
     <div>
-      <section id="header" className="d-flex align-items-center">
+      <section id="header" className="d-flex align-items-center my-5">
         <div className="container-fluid nav-bg">
           <div className="row">
             <div className="col-10 mx-auto">
@@ -18,7 +18,7 @@ const Common = (props) => {
                     websites for you
                   </h2>
                   <div className="mt-3">
-                    <NavLink to={props.link} className="btn-get-started btn btn-primary">
+                    <NavLink to={props.link} className="btn-get-started ">
                       {props.btntext}
                     </NavLink>
                   </div>

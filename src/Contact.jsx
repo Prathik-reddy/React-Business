@@ -1,67 +1,114 @@
-import React , {useState}from 'react'
+import React, { useState } from "react";
 
 const Contact = () => {
     const [data, setData] = useState({
-        name:"",
-        email:"",
-        phone:"",
-        message:"",
-    })
-    const InputEvent= (event) => {
-            const {name,value}=event.target;
-            setData((preValue) =>{
-                return {
-                    ...preValue,
-                    [name]:value,
-                }
-            })
-    }
-    const formSubmit = (e)=>{
-        e.preventDefault()
-        alert(`Your name is ${data.name} Your phone is ${data.phone} Your email is ${data.email} Your message is ${data.message}`);
-        setData({
-            name:"",
-            email:"",
-            phone:"",
-            message:"",
-        })
+        fullname: "",
+        phone: "",
+        email: "",
+        msg: "",
+    });
 
-    }
+    const InputEvent = (event) => {
+        const { name, value } = event.target;
+
+        setData((preVal) => {
+            return {
+                ...preVal,
+                [name]: value,
+            };
+        });
+    };
+
+    const formSubmit = (e) => {
+        e.preventDefault();
+        alert(
+            `My name is ${data.fullname}. My mobile number is ${data.phone} and email is ${data.email}, Here is what I watn to say ${data.msg}`
+        );
+        setData({
+            fullname: "",
+            phone: "",
+            email: "",
+            msg: "",
+        })
+    };
+
     return (
         <>
             <div className="my-5">
-                <h1 className="text-center">Contact Us</h1>
+                <h1 className="text-center"> Contact US </h1>
             </div>
-            <div className="container">
+            <div className="container contact_div">
                 <div className="row">
                     <div className="col-md-6 col-10 mx-auto">
                         <form onSubmit={formSubmit}>
-                            <div class="form-group  my-3">
-                                <label for="exampleFormControlInput1">Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value={data.name} onChange={InputEvent} placeholder="Enter your name" required/>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">
+                                    FullName
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    name="fullname"
+                                    value={data.fullname}
+                                    onChange={InputEvent}
+                                    placeholder="Enter your name"
+                                />
                             </div>
-                            <div class="form-group  my-3">
-                                <label for="exampleFormControlInput1">Phone Number</label>
-                                <input type="number" class="form-control" id="exampleFormControlInput1" name="phone" value={data.phone} onChange={InputEvent} placeholder="Enter your phone number" required/>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">
+                                    Phone
+                                </label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    name="phone"
+                                    value={data.phone}
+                                    onChange={InputEvent}
+                                    placeholder="Enter your mobile number"
+                                />
                             </div>
-                            <div class="form-group  my-3">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value={data.email} onChange={InputEvent} placeholder="Enter your email" required/>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">
+                                    Email address
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    name="email"
+                                    value={data.email}
+                                    onChange={InputEvent}
+                                    placeholder="Enter your email address"
+                                />
                             </div>
-                            <div class="form-group  my-3">
-                                <label for="exampleFormControlTextarea1">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" value={data.message} onChange={InputEvent} placeholder="Enter your message" rows="3" required></textarea>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">
+                                    Message
+                                </label>
+                                <textarea
+                                    class="form-control"
+                                    id="exampleFormControlTextarea1"
+                                    rows="3"
+                                    name="msg"
+                                    value={data.msg}
+                                    onChange={InputEvent}
+                                ></textarea>
                             </div>
-                            <div className="col-12  my-3">
-                                <button className="btn btn-outline-primary" type="submit">Submit</button>
+
+                            <div class="col-12">
+                                <button class="btn btn-outline-primary" type="submit">
+                                    Submit form
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </>
+    );
+};
 
-    )
-}
-
-export default Contact
+export default Contact;

@@ -17,7 +17,7 @@ const Services = () => {
     {
       title:"App Development",
       imgSrc:"https://titan-dev.net/wp-content/uploads/2020/12/mobile-app-development-guide-scaled.jpg",
-      desc:"App Development refers to the creation of computer applications for use on mobile devices such as tablets, smartphones and smart watches.Mobile applications are designed and built for different operating systems and developers will want to learn how to build for both the Android operating system."
+      desc:"App Development refers to the creation of computer applications for use on mobile devices such as tablets, smartphones .Mobile applications are designed and built for different operating systems and developers to learn how to build for both the Android operating system."
     },
     {
       title:"Digital Marketing",
@@ -32,7 +32,7 @@ const Services = () => {
     {
       title:"IOS Development",
       imgSrc:"https://intuz-site.imgix.net/uploads/ios-social-sharing.jpg",
-      desc:"Simply put, iOS development is the process of creating applications for Apple’s mobile operating system—the operating system used by the iPhone and iPod Touch. In this most fundamental sense, it has a lot in common with other types of software or app development, but there are a few key differences."
+      desc:"Simply put, iOS development is the process of creating applications for Apple’s mobile operating system—the operating system used by the iPhone and iPod Touch. In this most fundamental sense, it has a lot in common with other types of software or app development."
     }
 
   ]

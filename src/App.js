@@ -7,17 +7,19 @@ import About from './About';
 import Services from './Services';
 import Contact from './Contact';
 import Navbar from './components/Navbar';
-const  App = ()=> {
+import Footer from './Footer';
+const App = () => {
   return (
     <>
-    <Navbar/>
-    <Switch>
-      <Route exact path = "/" component = {Home}/>
-      <Route exact path = "/about" component = {About}/>
-      <Route exact path = "/contact" component = {Contact}/>
-      <Route exact path = "/service" component = {Services}/>
-      <Redirect to = "/"/>
-    </Switch>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/service" component={Services} />
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
     </>
   );
 }
