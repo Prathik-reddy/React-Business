@@ -1,10 +1,66 @@
-import React from 'react'
+import React , {useState}from 'react'
 
 const Contact = () => {
+    const [data, setData] = useState({
+        name:"",
+        email:"",
+        phone:"",
+        message:"",
+    })
+    const InputEvent= (event) => {
+            const {name,value}=event.target;
+            setData((preValue) =>{
+                return {
+                    ...preValue,
+                    [name]:value,
+                }
+            })
+    }
+    const formSubmit = (e)=>{
+        e.preventDefault()
+        alert(`Your name is ${data.name} Your phone is ${data.phone} Your email is ${data.email} Your message is ${data.message}`);
+        setData({
+            name:"",
+            email:"",
+            phone:"",
+            message:"",
+        })
+
+    }
     return (
-        <div>
-            <h1>contact pg</h1>
-        </div>
+        <>
+            <div className="my-5">
+                <h1 className="text-center">Contact Us</h1>
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 col-10 mx-auto">
+                        <form onSubmit={formSubmit}>
+                            <div class="form-group  my-3">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value={data.name} onChange={InputEvent} placeholder="Enter your name" required/>
+                            </div>
+                            <div class="form-group  my-3">
+                                <label for="exampleFormControlInput1">Phone Number</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" name="phone" value={data.phone} onChange={InputEvent} placeholder="Enter your phone number" required/>
+                            </div>
+                            <div class="form-group  my-3">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value={data.email} onChange={InputEvent} placeholder="Enter your email" required/>
+                            </div>
+                            <div class="form-group  my-3">
+                                <label for="exampleFormControlTextarea1">Message</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" value={data.message} onChange={InputEvent} placeholder="Enter your message" rows="3" required></textarea>
+                            </div>
+                            <div className="col-12  my-3">
+                                <button className="btn btn-outline-primary" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </>
+
     )
 }
 
