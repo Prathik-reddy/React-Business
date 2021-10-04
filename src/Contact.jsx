@@ -8,15 +8,8 @@ const Contact = () => {
         msg: "",
     });
 
-    const InputEvent = (event) => {
-        const { name, value } = event.target;
-
-        setData((preVal) => {
-            return {
-                ...preVal,
-                [name]: value,
-            };
-        });
+    const InputEvent = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value })
     };
 
     const formSubmit = (e) => {
